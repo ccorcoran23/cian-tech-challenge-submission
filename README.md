@@ -27,7 +27,7 @@ output = json
 You can initiate your SSO session using the following command: `aws sso login --profile <profile_name>`
 And export this profile so you don't need to specify the profile each time you use aws cli: `export AWS_PROFILE=<profile_name>`
 
-# Setup 
+# Setup
 Once auth is configured, you're ready to clone the repo, populate tfvars and start provisioning terraform resoruces 
 - Clone the repo locally: `git clone git@github.com:<username>/cian-tech-challenge-submission.git` # Repo is in our sentient.ie org and assumes you have keys setup for your GH account
         # Connectivity to the VM
@@ -42,4 +42,4 @@ Once auth is configured, you're ready to clone the repo, populate tfvars and sta
  
 - Initialize terraform: `terraform init`
 - Check resource provisioning is successful: `terraform plan`
-- Provision resoruces: `terraform apply`
+- Provision resoruces: `terraform apply` 

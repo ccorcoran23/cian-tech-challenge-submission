@@ -29,16 +29,15 @@ And export this profile so you don't need to specify the profile each time you u
 
 # Setup
 Once auth is configured, you're ready to clone the repo, populate tfvars and start provisioning terraform resoruces 
-- Clone the repo locally: `git clone git@github.com:<username>/cian-tech-challenge-submission.git` # Repo is in our sentient.ie org and assumes you have keys setup for your GH account
-        # Connectivity to the VM
-        This requires both your personal public IP and a newly generated keypair by following the below steps:
-        - Get your public IP using `curl ifconfig.me`
-        - Generate a keypair using: `ssh-keygen -t ed25519 -C "<key_name>"`
-        - When prompted, save the priv key to `/local/.ssh/path/<key_name>` # Note your public key will be saved in this same directory labelled `<key_name>.pub`
-        - Copy tfvars example template file using `cp terraform.tfvars.example terraform.tfvars`
-        - Modify `terraform.tfvars` with the following:
-             - `allowed_ip_cidr` value with your public IP cidr
-             - `ssh_public_key_path` value with the local path to your new public key
+- Clone the repo locally: `git clone git@github.com:<username>/cian-tech-challenge-submission.git` # Repo is in our sentient.ie org and assumes you have keys setup for your GH account.
+  - **Connectivity to the VM** 
+    - Get your public IP using `curl ifconfig.me`
+    - Generate a keypair using: `ssh-keygen -t ed25519 -C "<key_name>"`
+    - When prompted, save the priv key to `/local/.ssh/path/<key_name>` # Note your public key will be saved in this same directory labelled `<key_name>.pub
+    - Copy tfvars example template file using `cp terraform.tfvars.example terraform.tfvars`
+    - Modify `terraform.tfvars` with the following:
+      - `allowed_ip_cidr` value with your public IP cidr
+      - `ssh_public_key_path` value with the local path to your new public key
  
 - Initialize terraform: `terraform init`
 - Check resource provisioning is successful: `terraform plan`

@@ -15,6 +15,10 @@ resource "aws_security_group" "public" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+  tags = {
+    Terraform = "true"
+    Name = "public-sg-allow-ssh"
+  }
 }
 
 resource "aws_security_group" "private" {
@@ -33,5 +37,9 @@ resource "aws_security_group" "private" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    Terraform = "true"
+    Name = "private-sg-allow-from-public-sg"
   }
 }

@@ -3,7 +3,7 @@ resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr
   tags = {
     Terraform = "true"
-    Name = "Main-VPC"
+    Name      = "Main-VPC"
   }
 }
 
@@ -15,7 +15,7 @@ resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
   tags = {
     Terraform = "true"
-    Name = "Internet-Gateway"
+    Name      = "Internet-Gateway"
   }
 }
 
@@ -23,7 +23,7 @@ resource "aws_eip" "nat" {
   domain = "vpc"
   tags = {
     Terraform = "true"
-    Name = "NAT-Gateway-elastic-IP"
+    Name      = "NAT-Gateway-elastic-IP"
   }
 }
 resource "aws_nat_gateway" "main" {
@@ -32,7 +32,7 @@ resource "aws_nat_gateway" "main" {
   depends_on    = [aws_internet_gateway.main]
   tags = {
     Terraform = "true"
-    Name = "NAT-Gateway"
+    Name      = "NAT-Gateway"
   }
 }
 
@@ -43,7 +43,7 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
   tags = {
     Terraform = "true"
-    Name = "Public-subnet"
+    Name      = "Public-subnet"
   }
 }
 
@@ -53,7 +53,7 @@ resource "aws_subnet" "private" {
   availability_zone = data.aws_availability_zones.available.names[0]
   tags = {
     Terraform = "true"
-    Name = "Private-subnet"
+    Name      = "Private-subnet"
   }
 }
 
@@ -61,7 +61,7 @@ resource "aws_route_table" "public_default" {
   vpc_id = aws_vpc.main.id
   tags = {
     Terraform = "true"
-    Name = "Public-route-table"
+    Name      = "Public-route-table"
   }
 }
 
@@ -69,7 +69,7 @@ resource "aws_route_table" "private_default" {
   vpc_id = aws_vpc.main.id
   tags = {
     Terraform = "true"
-    Name = "Private-route-table"
+    Name      = "Private-route-table"
   }
 }
 

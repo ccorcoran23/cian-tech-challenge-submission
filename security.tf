@@ -17,7 +17,7 @@ resource "aws_security_group" "public" {
   }
   tags = {
     Terraform = "true"
-    Name = "public-sg-allow-ssh"
+    Name      = "public-sg-allow-ssh"
   }
 }
 
@@ -40,6 +40,6 @@ resource "aws_security_group" "private" {
   }
   tags = {
     Terraform = "true"
-    Name = "private-sg-allow-from-public-sg"
+    Name      = "private-sg-allow-from-public-sg"
   }
 }

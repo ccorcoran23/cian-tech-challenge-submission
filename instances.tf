@@ -13,7 +13,7 @@ resource "aws_key_pair" "main" {
   public_key = file(var.ssh_public_key_path)
   tags = {
     Terraform = "true"
-    Name = "User-local-key-for-ssh"
+    Name      = "User-local-key-for-ssh"
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_instance" "public" {
   associate_public_ip_address = true
   tags = {
     Terraform = "true"
-    Name = "Public-instance"
+    Name      = "Public-instance"
   }
 }
 
@@ -38,6 +38,6 @@ resource "aws_instance" "private" {
   vpc_security_group_ids = [aws_security_group.private.id]
   tags = {
     Terraform = "true"
-    Name = "Private-instance"
+    Name      = "Private-instance"
   }
 }

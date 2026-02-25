@@ -10,5 +10,3 @@
 
 # .tfvars files which may contain sensitive values. Personal IP and public key in this case.
 *.tfvars
-*.tfvars.example
-

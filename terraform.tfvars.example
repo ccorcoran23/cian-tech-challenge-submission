@@ -1,0 +1,2 @@
+allowed_ip_cidr     = "<personal_public_ip>/32"
+ssh_public_key_path = "/local/path/to/your/public-key.pub"

@@ -59,7 +59,7 @@ And export this profile so you don't need to specify the profile each time you u
 
 # Setup 
 Once auth is configured, you're ready to clone the repo, populate tfvars and start provisioning terraform resoruces 
-- Clone the repo locally: `git clone git@github.com:<username>/cian-tech-challenge-submission.git` # Repo is in our sentient.ie org and assumes you have keys setup for your GH account
+- Clone the repo locally: `git clone git@github.com:ccorcoran23/cian-tech-challenge-submission.git` # Repo is on my GH profile
 	# Connectivity to the VM
 	This requires both your personal public IP and a newly generated keypair by following the below steps:
 	- Get your public IP using `curl ifconfig.me`
